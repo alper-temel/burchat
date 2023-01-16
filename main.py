@@ -15,7 +15,7 @@ st.markdown("""
 
 st.markdown("# :violet[BURCHAT] :clap: :muscle: :nazar_amulet:")
 
-st.radio("Tür Seçiniz", ["Hem Metin Hem Görsel", "Sadece Metin", "Sadece Görsel"], label_visibility = "visible")
+st.radio("**Tür Seçiniz**", ["Hem Metin Hem Görsel", "Sadece Metin", "Sadece Görsel"], label_visibility = "visible")
 
 uploaded_excel = st.file_uploader(label = "**Gönderilecek Excel Dosyasını Seçin**", type = "csv")
 if uploaded_excel is not None:
@@ -29,6 +29,7 @@ if uploaded_image is not None:
 else:
     st.caption("Lütfen Görseli Kontrol Edin")
 
+@st.cache
 def sendMessage():
     if uploaded_excel is not None:
         uploaded_excel.seek(0)
@@ -39,9 +40,7 @@ def sendMessage():
             pywhatkit.sendwhatmsg_instantly(phone_number, text, wait_time = 10, tab_close=True)
             time.sleep(3)
             counter += 1
-            print(counter)
-            if counter >= 3:
-                uploaded_excel.seek(0)
+            if counter >= len(data):
                 st.stop()
                 
 
