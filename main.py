@@ -40,7 +40,7 @@ def sendMessage():
             uploaded_excel.seek(0)
             data = pd.read_csv(uploaded_excel)
             counter = 0
-            for gsm, text in zip(data[data.columns[1]], data[data.columns[2]]):
+            for gsm, text in zip(data[data.columns[0]], data[data.columns[1]]):
                 phone_number = "+90" + str(gsm)
                 pywhatkit.sendwhatmsg_instantly(phone_number, text, wait_time = 10, tab_close=True)
                 time.sleep(3)
@@ -53,7 +53,7 @@ def sendMessage():
             uploaded_excel.seek(0)
             data = pd.read_csv(uploaded_excel)
             counter = 0
-            for gsm, text in zip(data[data.columns[1]], data[data.columns[2]]):
+            for gsm, text in zip(data[data.columns[0]], data[data.columns[1]]):
                 phone_number = "+90" + str(gsm)
                 pywhatkit.sendwhats_image(phone_number, img, " ", 12, True)
                 time.sleep(3)
@@ -66,7 +66,7 @@ def sendMessage():
             uploaded_excel.seek(0)
             data = pd.read_csv(uploaded_excel)
             counter = 0
-            for gsm, text in zip(data[data.columns[1]], data[data.columns[2]]):
+            for gsm, text in zip(data[data.columns[0]], data[data.columns[1]]):
                 phone_number = "+90" + str(gsm)
                 pywhatkit.sendwhats_image(phone_number, img, text, 12, True)
                 time.sleep(3)
