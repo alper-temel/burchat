@@ -1,0 +1,2 @@
+pandas==1.2.4
+pywhatkit==5.4
