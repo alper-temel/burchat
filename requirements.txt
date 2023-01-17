@@ -2,4 +2,4 @@ pandas==1.2.4
 pywhatkit==5.4
 streamlit==1.17.0
 pyautogui==9.0.1
-mouseinfo==1.8.2
+mouseinfo==0.1.3
