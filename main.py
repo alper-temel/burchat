@@ -1,4 +1,3 @@
-pip install pywhatkit
 import streamlit as st
 import pywhatkit
 import pandas as pd
