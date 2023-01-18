@@ -3,7 +3,7 @@ import pandas as pd
 try:
   from pywhatkit import sendwhatmsg_instantly, sendwhats_image
 except:
-  pass
+  _display = 0
 import time
 
 st.markdown("""
