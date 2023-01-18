@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import pywhatkit
+from pywhatkit import sendwhatmsg_instantly, sendwhats_image
 import time
 
 st.markdown("""
@@ -42,7 +42,7 @@ def sendMessage():
             counter = 0
             for gsm, text in zip(data[data.columns[0]], data[data.columns[1]]):
                 phone_number = "+90" + str(gsm)
-                pywhatkit.sendwhatmsg_instantly(phone_number, text, wait_time = 10, tab_close=True)
+                sendwhatmsg_instantly(phone_number, text, wait_time = 10, tab_close=True)
                 time.sleep(3)
                 counter += 1
                 if counter >= len(data):
@@ -55,7 +55,7 @@ def sendMessage():
             counter = 0
             for gsm, text in zip(data[data.columns[0]], data[data.columns[1]]):
                 phone_number = "+90" + str(gsm)
-                pywhatkit.sendwhats_image(phone_number, img, " ", 12, True)
+                sendwhats_image(phone_number, img, " ", 12, True)
                 time.sleep(3)
                 counter += 1
                 if counter >= len(data):
@@ -68,7 +68,7 @@ def sendMessage():
             counter = 0
             for gsm, text in zip(data[data.columns[0]], data[data.columns[1]]):
                 phone_number = "+90" + str(gsm)
-                pywhatkit.sendwhats_image(phone_number, img, text, 12, True)
+                sendwhats_image(phone_number, img, text, 12, True)
                 time.sleep(3)
                 counter += 1
                 if counter >= len(data):
