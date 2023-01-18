@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
-from pywhatkit import sendwhatmsg_instantly, sendwhats_image
+try:
+  from pywhatkit import sendwhatmsg_instantly, sendwhats_image
+except:
+  pass
 import time
 
 st.markdown("""
