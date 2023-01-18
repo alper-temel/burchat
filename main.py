@@ -1,4 +1,6 @@
 import streamlit as st
+import os
+os.environ['DISPLAY'] = ':0'
 import pywhatkit
 import pandas as pd
 import time
