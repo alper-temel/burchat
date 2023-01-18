@@ -1,5 +1,6 @@
+pip install pywhatkit
 import streamlit as st
-#import pywhatkit
+import pywhatkit
 import pandas as pd
 import time
 
