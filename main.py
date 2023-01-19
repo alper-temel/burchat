@@ -22,8 +22,8 @@ uploaded_excel = st.file_uploader(label = "**Gönderilecek Excel Dosyasını Se�
 if uploaded_excel is not None:
     try:
       st.dataframe(pd.read_csv(uploaded_excel))
-     except:
-       st.dataframe(pd.read_excel(uploaded_excel))
+    except:
+      st.dataframe(pd.read_excel(uploaded_excel))
 else:
     st.caption("Lütfen Excel Dosyasını Kontrol Edin")
 
