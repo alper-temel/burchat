@@ -78,4 +78,4 @@ def sendMessage():
 
 st.button("WhatsApp Mesajlaşmasını Başlat :rocket:", on_click = sendMessage)  
 
-st.markdown("Burchat v2.0 ~ Hepiyi :robot_face: 2023")
+st.markdown("Burchat v2.0 ~ pekiyi :robot_face: 2023")
