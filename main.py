@@ -20,7 +20,10 @@ print(sending_type)
 
 uploaded_excel = st.file_uploader(label = "**Gönderilecek Excel Dosyasını Seçin**", type = ["csv", "xlsx"])
 if uploaded_excel is not None:
-    st.dataframe(pd.read_csv(uploaded_excel))
+    try:
+      st.dataframe(pd.read_csv(uploaded_excel))
+     except:
+       st.dataframe(pd.read_excel(uploaded_excel))
 else:
     st.caption("Lütfen Excel Dosyasını Kontrol Edin")
 
